@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TOPtuyendung</title>
+    <link rel="stylesheet" href="abc.css" />
+    <!-- THÊM FONT AWESOME -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <!-- Logo -->
+        <div class="nav-logo">
+          <a href="index.html">
+            <div class="logo">
+              
+              
+              <i class="fas fa-briefcase"></i>
+            </div>
+            
+            <span class="brand-name">TOPtuyendung</span>
+          </a>
+        </div>
+
+        <!-- Main Navigation -->
+        <ul class="menu">
+          <li><a href="index.html">Trang chủ</a></li>
+          <li class="has-submenu">
+            <a href=
+              >Tìm việc <i class="fas fa-chevron-down"></i
+            ></a>
+            <ul class="submenu">
+              <li>
+                <a href="part.html"><i class="fas fa-clock"></i> Part-time</a>
+              </li>
+              <li>
+                <a href="full.html"
+                  ><i class="fas fa-briefcase"></i> Full-time</a
+                >
+              </li>
+             
+            </ul>
+          </li>
+          <li><a href="ungtuyen.html">Ứng tuyển</a></li>
+          <li><a href="#" onclick="openPopup()">Liên hệ</a></li>
+          <li><a href="gioithieu.html">Giới thiệu</a></li>
+        </ul>
+
+        <!-- Search Container -->
+        <div class="search-container">
+          <div class="search-box">
+            <input
+              type="text"
+              id="searchInput"
+              placeholder="Chức danh, kỹ năng, công ty..."
+            />
+            <button class="search-btn" onclick="handleSearch()">
+              <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+          </div>
+          <div class="search-suggestions" id="searchSuggestions"></div>
+        </div>
+
+        <!-- User Section -->
+        <div class="user-section">
+          <!-- Chưa đăng nhập -->
+          <div class="auth-buttons">
+            <button class="btn-login" onclick="openLoginModal()">
+              <i class="fas fa-sign-in-alt"></i> Đăng nhập
+            </button>
+            <button class="btn-register" onclick="openRegisterModal()">
+              <i class="fas fa-user-plus"></i> Đăng ký
+            </button>
+          </div>
+
+          <!-- Đã đăng nhập (ẩn ban đầu) -->
+          <div class="user-menu">
+            <div class="user-info">
+              <img
+                src="https://via.placeholder.com/36"
+                alt="Avatar"
+                class="user-avatar"
+              />
+              <span class="user-name">Nguyễn Văn A</span>
+              <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="user-dropdown">
+              <a href="profile.html" class="dropdown-item">
+                <i class="fas fa-user"></i> Hồ sơ cá nhân
+              </a>
+              <a href="saved-jobs.html" class="dropdown-item">
+                <i class="fas fa-bookmark"></i> Việc làm đã lưu
+                <span class="badge">5</span>
+              </a>
+              <a href="applications.html" class="dropdown-item">
+                <i class="fas fa-file-alt"></i> Đơn ứng tuyển
+                <span class="badge">2</span>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a href="#" class="dropdown-item" onclick="logout()">
+                <i class="fas fa-sign-out-alt"></i> Đăng xuất
+              </a>
+            </div>
+          </div>
+
+          <!-- Nút đăng tin tuyển dụng -->
+          <button class="btn-post-job" onclick="openPostJobModal()">
+            <i class="fas fa-plus"></i> Đăng tin
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeLoginModal()">&times;</span>
+        <h2>Đăng nhập</h2>
+        <form id="loginForm">
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Mật khẩu" required />
+            <span class="toggle-password" onclick="togglePassword(this)">
+              <i class="fas fa-eye"></i>
+            </span>
+          </div>
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-sign-in-alt"></i> Đăng nhập
+          </button>
+          <p class="auth-switch">
+            Chưa có tài khoản?
+            <a href="#" onclick="switchToRegister()">Đăng ký ngay</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeRegisterModal()">&times;</span>
+        <h2>Đăng ký tài khoản</h2>
+        <form id="registerForm">
+          <div class="form-group">
+            <input type="text" placeholder="Họ và tên" required />
+          </div>
+          <div class="form-group">
+            <input type="email" placeholder="Email" required />
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Mật khẩu" required />
+            <span class="toggle-password" onclick="togglePassword(this)">
+              <i class="fas fa-eye"></i>
+            </span>
+          </div>
+          <div class="form-group">
+            <input type="password" placeholder="Xác nhận mật khẩu" required />
+          </div>
+          <button type="submit" class="btn-primary">
+            <i class="fas fa-user-plus"></i> Đăng ký
+          </button>
+          <p class="auth-switch">
+            Đã có tài khoản?
+            <a href="#" onclick="switchToLogin()">Đăng nhập ngay</a>
+          </p>
+        </form>
+      </div>
+    </div>
+
+    <!-- Demo Content -->
+
+    <div class="slidebanner">
+      <img src="anh/NGÀY HỘI TUYỂN DỤNG.png" alt="" />
+    </div>
+
+    <div class="land1"></div>
+    <!-- MAIN LAYOUT -->
+    <div class="main-layout">
+      <!-- Cột trái: Tất cả danh sách tuyển dụng -->
+      <div class="left-column">
+        <div class="job-list">
+          <div class="job-card" data-job="nhan-vien-ke-toan-1">
+            <img src="anh/tienganh.webp" alt="Logo" class="logo" />
+            <h3>Chuyên Viên Kinh Doanh Fulltime</h3>
+            <p>
+              <b>Công ty:</b> CÔNG TY TNHH TRƯỜNG QUỐC TẾ PALFISH SINGAPORE -
+              VIETNAM
+            </p>
+            <p><b>Địa chỉ:</b>Thanh Xuân - Hà Nội</p>
+            <p><b>Lương:</b> 13 - 15 triệu VNĐ</p>
+            <!-- Nút lưu -->
+            <button class="save-btn">
+              <i class="far fa-bookmark"></i> Lưu thông tin
+            </button>
+          </div>
+          <div class="job-card" data-job="chuyen-vien-dvkh-1">
+            <img src="anh/manulife.webp" alt="Logo" class="logo" />
+            <h3>
+              Chuyên Viên Tư Vấn Bảo Hiểm Kênh Hợp Tác Ngân Hàng Vietinbank -
+              Bắc Trung Nam
+            </h3>
+            <p><b>Công ty:</b> TNHH Manulife Việt Nam</p>
+            <p><b>Địa chỉ:</b>Hai Bà Trưng - Hà Nội</p>
+            <p><b>Lương:</b> 10 - 100 triệu</p>
+            <!-- Nút lưu -->
+            <button class="save-btn">
+              <i class="far fa-bookmark"></i> Lưu thông tin
+            </button>
+          </div>
+        </div>
+
+        <div class="job-list">
+          <div class="job-card" data-job="nhan-vien-ke-toan-2">
+            <img src="anh/cellphoneS.webp" alt="Logo" class="logo" />
+            <h3>Nhân viên Kế Toán Thuế</h3>
+            <p><b>Công ty:</b>TNHH Thương Mại Tổng hợp HTV(Cellphone S)</p>
+            <p><b>Địa chỉ:</b>Hoàn Kiếm - Hà Nội</p>
+            <p><b>Lương:</b> 13 - 15 triệu VNĐ</p>
+            <!-- Nút lưu -->
+            <button class="save-btn">
+              <i class="far fa-bookmark"></i> Lưu thông tin
+            </button>
+          </div>
+          <div class="job-card" data-job="chuyen-vien-dvkh-2">
+            <img src="anh/haiphat.webp" alt="Logo" class="logo" />
+            <h3>Giám đốc Marketing</h3>
+            <p><b>Công ty:</b>Cổ phần Đầu tư Hải Phát</p>
+            <p><b>Địa chỉ:</b> Hà Nội</p>
+            <p><b>Lương:</b> 35 - 40 triệu</p>
+            <!-- Nút lưu -->
+            <button class="save-btn">
+              <i class="far fa-bookmark"></i> Lưu thông tin
+            </button>
+          </div>
+        </div>
+
+        <div class="job-list">
+          <div class="job-card" data-job="nhan-vien-ke-toan-3">
+            <img src="anh/spx.webp" alt="Logo" class="logo" />
+            <h3>Trưởng nhóm phát triển kinh doanh(HN/HCM)</h3>
+            <p><b>Công ty:</b> TNHH SPX Express</p>
+            <p><b>Địa chỉ:</b>Ba Đình - Hà Nội</p>
+            <p><b>Lương:</b>Thỏa thuận</p>
+            <!-- Nút lưu -->
+            <button class="save-btn">
+              <i class="far fa-bookmark"></i> Lưu thông tin
+            </button>
+          </div>
+          <div class="job-card" data-job="chuyen-vien-dvkh-3">
+            <img src="anh/ghtk.webp" alt="Logo" class="logo" />
+            <h3>Nhân viên kiểm soát chất lượng vận hành</h3>
+            <p><b>Công ty:</b> Cổ phần giao hàng tiết kiệm</p>
+            <p><b>Địa chỉ:</b>Hoàng Mai - Hà Nội</p>
+            <p><b>Lương:</b> 7 - 10 triệu</p>
+            <!-- Nút lưu -->
+            <button class="save-btn">
+              <i class="far fa-bookmark"></i> Lưu thông tin
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cột phải -->
+      <div class="sidebar">
+        <div class="urgent-banner">
+          <div class="banner-content">
+            <h2>🚀 TUYỂN GẤP 🚀</h2>
+            <p><strong>Công ty:</strong> Công Ty TNHH WS Việt Nam</p>
+            <p><strong>Vị trí:</strong> Nhân Viên Kế Toán Thuế</p>
+            <p><strong>Số lượng:</strong> 03</p>
+            <p><strong>Lương:</strong> 13 - 15 triệu VND</p>
+            <p><strong>Thời gian tuyển:</strong> 01/09 - 30/09/2025</p>
+            <button class="apply-btn">Ứng tuyển ngay</button>
+          </div>
+        </div>
+
+        <div class="blog-slider">
+          <div class="slides">
+            <div class="slide">
+              <img src="anh/banner0.jpg" alt="Blog 1" />
+            </div>
+            <div class="slide">
+              <img src="anh/banner1.jpg" alt="Blog 2" />
+            </div>
+            <div class="slide">
+              <img src="anh/banner2.jpg" alt="Blog 3" />
+            </div>
+            <div class="slide">
+              <img src="anh/banner3.jpg" alt="Blog 4" />
+            </div>
+            <div class="slide">
+              <img src="anh/banner4.jpg" alt="Blog 5" />
+            </div>
+            <div class="slide">
+              <img src="anh/banner5.jpg" alt="Blog 6" />
+            </div>
+          </div>
+
+          <!-- Nút điều hướng -->
+          <button class="prev">&#10094;</button>
+          <button class="next">&#10095;</button>
+
+          <!-- Dot indicators -->
+          <div class="slider-dots"></div>
+        </div>
+      </div>
+      <!-- ĐÓNG THẺ .sidebar -->
+    </div>
+    <!-- ĐÓNG THẺ .main-layout -->
+
+    <!-- Popup Liên hệ -->
+    <div class="overlay" id="overlay">
+      <div class="contact-popup">
+        <!-- Left -->
+        <div class="popup-left">
+          <img src="https://i.pravatar.cc/150?img=5" alt="Admin Avatar" />
+          <h3>Admin Support</h3>
+          <p>Hỗ trợ tuyển dụng</p>
+        </div>
+
+        <!-- Right -->
+        <div class="popup-right">
+          <h2>Thông tin liên hệ</h2>
+          <p><strong>Hotline:</strong> +84 123 456 789</p>
+          <p><strong>Email:</strong> support@tuyendung.com</p>
+          <p><strong>Địa chỉ:</strong> Ho Chi Minh City, Vietnam</p>
+
+          <div class="actions">
+            <button>📞 Gọi Ngay</button>
+            <button>✉️ Gửi Email</button>
+            <button>💬 Chat trực tiếp</button>
+          </div>
+
+          <div class="popup-footer">
+            <p>Bạn quan tâm? Hãy chia sẻ hoặc lưu lại thông tin admin.</p>
+            <button>🔗 Chia sẻ</button>
+            <button>💾 Lưu lại</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="career-section">
+      <h2>Ngành Nghề Nổi Bật</h2>
+      <div class="career-grid">
+        <a href="#" class="career-card" data-career="kinh-doanh">
+          <div class="career-icon" style="background: #e3f2fd">
+            <i class="fas fa-briefcase"></i>
+          </div>
+          <h3>Kinh Doanh</h3>
+          <p>11K+ Việc làm</p>
+        </a>
+
+        <a href="#" class="career-card" data-career="nhan-su">
+          <div class="career-icon" style="background: #fdecea">
+            <i class="fas fa-users"></i>
+          </div>
+          <h3>Nhân Sự</h3>
+          <p>1.9K+ Việc làm</p>
+        </a>
+
+        <a href="#" class="career-card" data-career="luat">
+          <div class="career-icon" style="background: #f3e5f5">
+            <i class="fas fa-balance-scale"></i>
+          </div>
+          <h3>Luật</h3>
+          <p>510+ Việc làm</p>
+        </a>
+
+        <a href="#" class="career-card" data-career="ke-toan">
+          <div class="career-icon" style="background: #fff3e0">
+            <i class="fas fa-calculator"></i>
+          </div>
+          <h3>Kế Toán</h3>
+          <p>4.1K+ Việc làm</p>
+        </a>
+
+        <a href="#" class="career-card" data-career="cong-nghe">
+          <div class="career-icon" style="background: #e8f5e9">
+            <i class="fas fa-laptop-code"></i>
+          </div>
+          <h3>Công Nghệ</h3>
+          <p>1.9K+ Việc làm</p>
+        </a>
+
+        <a href="#" class="career-card" data-career="marketing">
+          <div class="career-icon" style="background: #fff8e1">
+            <i class="fas fa-bullhorn"></i>
+          </div>
+          <h3>Marketing</h3>
+          <p>3.8K+ Việc làm</p>
+        </a>
+      </div>
+    </section>
+
+    <!-- Footer - GIỮ NGUYÊN -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Về chúng tôi -->
+        <div class="footer-column">
+          <h3>Về TOPtuyendung</h3>
+          <p><b>Công Ty Cổ Phần Việc Làm TOP</b></p>
+          <p>Phòng 102, Tòa nhà 20-20B Trần Cao Vân, Quận 3, TP. Hồ Chí Minh</p>
+          <p>Chi nhánh: Tầng 8, Tòa nhà 789 Bộ Quốc Phòng, Hà Nội</p>
+          <p>
+            <i class="fas fa-phone"></i> Hotline: <strong>1800 8888</strong>
+          </p>
+          <p>
+            <i class="fas fa-envelope"></i> Email:
+            <strong>support@toptuyendung.vn</strong>
+          </p>
+        </div>
+
+        <!-- Liên kết nhanh -->
+        <div class="footer-column">
+          <h3>Liên kết nhanh</h3>
+          <ul>
+            <li>
+              <a href="index.html"><i class="fas fa-home"></i> Trang chủ</a>
+            </li>
+            <li>
+              <a href="timviec.html"
+                ><i class="fas fa-search"></i> Tìm việc làm</a
+              >
+            </li>
+            <li>
+              <a href="ungtuyen.html"
+                ><i class="fas fa-paper-plane"></i> Ứng tuyển</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="openPopup()"
+                ><i class="fas fa-phone"></i> Liên hệ</a
+              >
+            </li>
+            <li>
+              <a href="gioithieu.html"
+                ><i class="fas fa-info-circle"></i> Giới thiệu</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Ngành nghề -->
+        <div class="footer-column">
+          <h3>Ngành nghề hot</h3>
+          <ul>
+            <li>
+              <a href="#" onclick="filterJobsByCategory('kinh-doanh')"
+                ><i class="fas fa-briefcase"></i> Kinh doanh</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="filterJobsByCategory('marketing')"
+                ><i class="fas fa-bullhorn"></i> Marketing</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="filterJobsByCategory('cong-nghe')"
+                ><i class="fas fa-laptop-code"></i> Công nghệ</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="filterJobsByCategory('ke-toan')"
+                ><i class="fas fa-calculator"></i> Kế toán</a
+              >
+            </li>
+            <li>
+              <a href="#" onclick="filterJobsByCategory('nhan-su')"
+                ><i class="fas fa-users"></i> Nhân sự</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Kết nối -->
+        <div class="footer-column">
+          <h3>Kết nối với chúng tôi</h3>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" title="Facebook">
+              <i class="fab fa-facebook-f"></i>
+            </a>
+            <a href="https://youtube.com" target="_blank" title="YouTube">
+              <i class="fab fa-youtube"></i>
+            </a>
+            <a href="https://linkedin.com" target="_blank" title="LinkedIn">
+              <i class="fab fa-linkedin-in"></i>
+            </a>
+            <a href="https://zalo.me" target="_blank" title="Zalo">
+              <i class="fab fa-weixin"></i>
+            </a>
+          </div>
+
+          <h3>Tải ứng dụng</h3>
+          <div class="app-links">
+            <a href="#">
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg"
+                alt="Google Play"
+                width="120"
+              />
+            </a>
+            <a href="#">
+              <img
+                src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                alt="App Store"
+                width="120"
+              />
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div class="footer-container">
+          <p>
+            &copy; 2024 <strong>TOPtuyendung</strong>. Demo Project - All rights
+            reserved.
+          </p>
+          <div class="footer-links">
+            <a href="#">Điều khoản sử dụng</a>
+            <a href="#">Chính sách bảo mật</a>
+            <a href="#">Sitemap</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Modal hiển thị chi tiết job -->
+    <div id="jobModal" class="modal">
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div id="job-detail"></div>
+      </div>
+    </div>
+    <script src="https://app.tudongchat.com/js/chatbox.js"></script>
+    <script>
+      const tudong_chatbox = new TuDongChat("9KyVHRpAGGckkumhJmrV1");
+      tudong_chatbox.initial();
+    </script>
+
+    <script src="main.js"></script>
+  </body>
+</html>

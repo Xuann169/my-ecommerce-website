@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tuyển dụng Full-time</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="full.css">
+  </head>
+</html>
+</head>
+<body>
+    <div class="container">
+        <h2 class="title">VIỆC LÀM FULL-TIME</h2>
+
+        <div class="filter-container">
+            <div class="filter-group">
+                <label for="location"><i class="fas fa-map-marker-alt"></i> Địa điểm</label>
+                <select id="location">
+                    <option value="">Tất cả địa điểm</option>
+                    <option value="hanoi">Hà Nội</option>
+                    <option value="hcm">TP. Hồ Chí Minh</option>
+                    <option value="danang">Đà Nẵng</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="salary"><i class="fas fa-money-bill-wave"></i> Mức lương</label>
+                <select id="salary">
+                    <option value="">Tất cả mức lương</option>
+                    <option value="10-15">10-15 triệu</option>
+                    <option value="15-20">15-20 triệu</option>
+                    <option value="20+">Trên 20 triệu</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label for="job-type"><i class="fas fa-briefcase"></i> Ngành nghề</label>
+                <select id="job-type">
+                    <option value="">Tất cả ngành</option>
+                    <option value="it">Công nghệ thông tin</option>
+                    <option value="finance">Tài chính - Ngân hàng</option>
+                    <option value="marketing">Marketing</option>
+                    <option value="hr">Nhân sự</option>
+                </select>
+            </div>
+            <button class="search-btn">
+                <i class="fas fa-search"></i> Tìm kiếm
+            </button>
+        </div>
+
+        <div class="job-list">
+            <!-- Job card 1 -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Lập Trình Viên Full-stack</h3>
+                    <p>Công ty Công nghệ ABC</p>
+                    <div class="urgent-badge">TUYỂN GẤP</div>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-info">
+                        <div class="logo">
+                            <img src="anh/vingroup.png" alt="Logo">
+                        </div>
+                        <div class="job-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Hà Nội</p>
+                            <p><i class="fas fa-money-bill-wave"></i> 15-25 triệu</p>
+                            <p><i class="fas fa-clock"></i> Toàn thời gian</p>
+                        </div>
+                    </div>
+                    <p>Phát triển ứng dụng web và mobile sử dụng React, Node.js và các công nghệ liên quan.</p>
+                </div>
+                <div class="job-card-footer">
+                    <div class="job-actions">
+                        <button class="apply-now-btn" data-job="1">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu
+                        </button>
+                    </div>
+                    <button class="view-detail-btn" data-job="1">
+                        <i class="fas fa-info-circle"></i> Xem chi tiết
+                    </button>
+                </div>
+                <div class="job-detail" id="job-detail-1">
+                    <h4>Mô tả công việc</h4>
+                    <ul>
+                        <li>Phát triển ứng dụng web và mobile sử dụng React, Node.js</li>
+                        <li>Thiết kế và phát triển API</li>
+                        <li>Tối ưu hóa hiệu suất ứng dụng</li>
+                        <li>Làm việc với cơ sở dữ liệu SQL và NoSQL</li>
+                    </ul>
+
+                    <h4>Yêu cầu</h4>
+                    <ul>
+                        <li>Có ít nhất 2 năm kinh nghiệm làm việc với React và Node.js</li>
+                        <li>Hiểu biết về cơ sở dữ liệu MySQL, MongoDB</li>
+                        <li>Có kinh nghiệm với Git và các công cụ quản lý phiên bản</li>
+                        <li>Khả năng làm việc độc lập và theo nhóm</li>
+                    </ul>
+
+                    <h4>Quyền lợi</h4>
+                    <ul>
+                        <li>Lương thưởng cạnh tranh, thưởng theo dự án</li>
+                        <li>Bảo hiểm sức khỏe cao cấp</li>
+                        <li>Đào tạo và phát triển kỹ năng</li>
+                        <li>Môi trường làm việc trẻ trung, năng động</li>
+                    </ul>
+
+                    <div class="detail-actions">
+                        <button class="apply-now-btn" data-job="1">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job card 2 -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Chuyên Viên Marketing</h3>
+                    <p>Tập đoàn Thương mại XYZ</p>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-info">
+                        <div class="logo">
+                            <img src="anh/vinamilk.jpg" alt="Logo">
+                        </div>
+                        <div class="job-details">
+                            <p><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh</p>
+                            <p><i class="fas fa-money-bill-wave"></i> 12-18 triệu</p>
+                            <p><i class="fas fa-clock"></i> Toàn thời gian</p>
+                        </div>
+                    </div>
+                    <p>Lập kế hoạch và triển khai các chiến dịch marketing, quảng bá thương hiệu.</p>
+                </div>
+                <div class="job-card-footer">
+                    <div class="job-actions">
+                        <button class="apply-now-btn" data-job="2">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu
+                        </button>
+                    </div>
+                    <button class="view-detail-btn" data-job="2">
+                        <i class="fas fa-info-circle"></i> Xem chi tiết
+                    </button>
+                </div>
+                <div class="job-detail" id="job-detail-2">
+                    <h4>Mô tả công việc</h4>
+                    <ul>
+                        <li>Lập kế hoạch và triển khai các chiến dịch marketing</li>
+                        <li>Quản lý và phát triển nội dung cho website và mạng xã hội</li>
+                        <li>Phân tích và báo cáo hiệu quả các chiến dịch marketing</li>
+                        <li>Phối hợp với các bộ phận liên quan để triển khai hoạt động marketing</li>
+                    </ul>
+
+                    <h4>Yêu cầu</h4>
+                    <ul>
+                        <li>Tốt nghiệp Đại học chuyên ngành Marketing, Truyền thông hoặc liên quan</li>
+                        <li>Có ít nhất 3 năm kinh nghiệm trong lĩnh vực marketing</li>
+                        <li>Thành thạo các công cụ phân tích và quảng cáo trực tuyến</li>
+                        <li>Kỹ năng giao tiếp và làm việc nhóm tốt</li>
+                    </ul>
+
+                    <div class="detail-actions">
+                        <button class="apply-now-btn" data-job="2">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job card 3 -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Kế Toán Tổng Hợp</h3>
+                    <p>Công ty Dịch vụ Tài chính DEF</p>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-info">
+                        <div class="logo">
+                            <img src="anh/viettinbank.jpg" alt="Logo">
+                        </div>
+                        <div class="job-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Đà Nẵng</p>
+                            <p><i class="fas fa-money-bill-wave"></i> 10-15 triệu</p>
+                            <p><i class="fas fa-clock"></i> Toàn thời gian</p>
+                        </div>
+                    </div>
+                    <p>Thực hiện các nghiệp vụ kế toán, lập báo cáo tài chính và quyết toán thuế.</p>
+                </div>
+                <div class="job-card-footer">
+                    <div class="job-actions">
+                        <button class="apply-now-btn" data-job="3">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu
+                        </button>
+                    </div>
+                    <button class="view-detail-btn" data-job="3">
+                        <i class="fas fa-info-circle"></i> Xem chi tiết
+                    </button>
+                </div>
+                <div class="job-detail" id="job-detail-3">
+                    <h4>Mô tả công việc</h4>
+                    <ul>
+                        <li>Thực hiện các nghiệp vụ kế toán tổng hợp</li>
+                        <li>Lập báo cáo tài chính theo quy định</li>
+                        <li>Quyết toán thuế và các nghĩa vụ với nhà nước</li>
+                        <li>Kiểm tra, đối chiếu số liệu giữa các bộ phận</li>
+                    </ul>
+
+                    <h4>Yêu cầu</h4>
+                    <ul>
+                        <li>Tốt nghiệp Đại học chuyên ngành Kế toán, Kiểm toán</li>
+                        <li>Có ít nhất 2 năm kinh nghiệm ở vị trí tương đương</li>
+                        <li>Thành thạo phần mềm kế toán MISA, FAST</li>
+                        <li>Có chứng chỉ hành nghề kế toán là một lợi thế</li>
+                    </ul>
+
+                    <div class="detail-actions">
+                        <button class="apply-now-btn" data-job="3">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job card 4 -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Chuyên Viên Nhân Sự</h3>
+                    <p>Công ty Dịch vụ MNO</p>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-info">
+                        <div class="logo">
+                            <img src="anh/PRESENT AND FUTURE.jpg" alt="Logo">
+                        </div>
+                        <div class="job-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Hà Nội</p>
+                            <p><i class="fas fa-money-bill-wave"></i> 8-12 triệu</p>
+                            <p><i class="fas fa-clock"></i> Toàn thời gian</p>
+                        </div>
+                    </div>
+                    <p>Thực hiện các nghiệp vụ tuyển dụng và quản lý nhân sự.</p>
+                </div>
+                <div class="job-card-footer">
+                    <div class="job-actions">
+                        <button class="apply-now-btn" data-job="4">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu
+                        </button>
+                    </div>
+                    <button class="view-detail-btn" data-job="4">
+                        <i class="fas fa-info-circle"></i> Xem chi tiết
+                    </button>
+                </div>
+                <div class="job-detail" id="job-detail-4">
+                    <h4>Mô tả công việc</h4>
+                    <ul>
+                        <li>Thực hiện các nghiệp vụ tuyển dụng: đăng tin, sàng lọc hồ sơ, phỏng vấn</li>
+                        <li>Quản lý hồ sơ nhân sự, hợp đồng lao động</li>
+                        <li>Tham gia xây dựng chính sách nhân sự</li>
+                        <li>Hỗ trợ giải quyết các vấn đề phát sinh liên quan đến nhân sự</li>
+                    </ul>
+
+                    <h4>Yêu cầu</h4>
+                    <ul>
+                        <li>Tốt nghiệp Đại học chuyên ngành Quản trị Nhân sự hoặc liên quan</li>
+                        <li>Có ít nhất 1 năm kinh nghiệm ở vị trí tương đương</li>
+                        <li>Kỹ năng giao tiếp và đàm phán tốt</li>
+                        <li>Thành thạo tin học văn phòng</li>
+                    </ul>
+
+                    <div class="detail-actions">
+                        <button class="apply-now-btn" data-job="4">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job card 5 -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Kỹ Sư Cơ Khí</h3>
+                    <p>Công ty Sản xuất GHI</p>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-info">
+                        <div class="logo">
+                            <img src="anh/petro.png" alt="Logo">
+                        </div>
+                        <div class="job-details">
+                            <p><i class="fas fa-map-marker-alt"></i> Bình Dương</p>
+                            <p><i class="fas fa-money-bill-wave"></i> 12-16 triệu</p>
+                            <p><i class="fas fa-clock"></i> Toàn thời gian</p>
+                        </div>
+                    </div>
+                    <p>Thiết kế, cải tiến và bảo trì hệ thống máy móc, thiết bị sản xuất.</p>
+                </div>
+                <div class="job-card-footer">
+                    <div class="job-actions">
+                        <button class="apply-now-btn" data-job="5">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu
+                        </button>
+                    </div>
+                    <button class="view-detail-btn" data-job="5">
+                        <i class="fas fa-info-circle"></i> Xem chi tiết
+                    </button>
+                </div>
+                <div class="job-detail" id="job-detail-5">
+                    <h4>Mô tả công việc</h4>
+                    <ul>
+                        <li>Thiết kế, cải tiến hệ thống máy móc, thiết bị sản xuất</li>
+                        <li>Lập kế hoạch bảo trì, sửa chữa thiết bị</li>
+                        <li>Giám sát quá trình lắp đặt, vận hành máy móc</li>
+                        <li>Nghiên cứu và ứng dụng công nghệ mới vào sản xuất</li>
+                    </ul>
+
+                    <h4>Yêu cầu</h4>
+                    <ul>
+                        <li>Tốt nghiệp Đại học chuyên ngành Cơ khí Chế tạo máy</li>
+                        <li>Có ít nhất 2 năm kinh nghiệm ở vị trí tương đương</li>
+                        <li>Thành thạo phần mềm thiết kế cơ khí (AutoCAD, SolidWorks)</li>
+                        <li>Hiểu biết về hệ thống cơ khí, thủy lực, khí nén</li>
+                    </ul>
+
+                    <div class="detail-actions">
+                        <button class="apply-now-btn" data-job="5">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Job card 6 -->
+            <div class="job-card">
+                <div class="job-card-header">
+                    <h3>Chuyên Viên Tư Vấn Tài Chính</h3>
+                    <p>Ngân hàng TMCP JKL</p>
+                </div>
+                <div class="job-card-body">
+                    <div class="job-info">
+                        <div class="logo">
+                            <img src="anh/cellphoneS.webp" alt="Logo">
+                        </div>
+                        <div class="job-details">
+                            <p><i class="fas fa-map-marker-alt"></i> TP. Hồ Chí Minh</p>
+                            <p><i class="fas fa-money-bill-wave"></i> 15-20 triệu + Hoa hồng</p>
+                            <p><i class="fas fa-clock"></i> Toàn thời gian</p>
+                        </div>
+                    </div>
+                    <p>Tư vấn các sản phẩm tài chính, ngân hàng cho khách hàng cá nhân và doanh nghiệp.</p>
+                </div>
+                <div class="job-card-footer">
+                    <div class="job-actions">
+                        <button class="apply-now-btn" data-job="6">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu
+                        </button>
+                    </div>
+                    <button class="view-detail-btn" data-job="6">
+                        <i class="fas fa-info-circle"></i> Xem chi tiết
+                    </button>
+                </div>
+                <div class="job-detail" id="job-detail-6">
+                    <h4>Mô tả công việc</h4>
+                    <ul>
+                        <li>Tư vấn các sản phẩm tài chính, ngân hàng cho khách hàng</li>
+                        <li>Phân tích nhu cầu tài chính của khách hàng</li>
+                        <li>Giới thiệu và bán các sản phẩm tín dụng, tiết kiệm, đầu tư</li>
+                        <li>Chăm sóc và duy trì mối quan hệ với khách hàng hiện có</li>
+                    </ul>
+
+                    <h4>Yêu cầu</h4>
+                    <ul>
+                        <li>Tốt nghiệp Đại học chuyên ngành Tài chính, Ngân hàng, Kinh tế</li>
+                        <li>Có ít nhất 1 năm kinh nghiệm trong lĩnh vực tài chính, ngân hàng</li>
+                        <li>Kỹ năng giao tiếp, thuyết phục và đàm phán tốt</li>
+                        <li>Có chứng chỉ hành nghề là một lợi thế</li>
+                    </ul>
+
+                    <div class="detail-actions">
+                        <button class="apply-now-btn" data-job="6">
+                            <i class="fas fa-paper-plane"></i> Ứng tuyển ngay
+                        </button>
+                        <button class="save-btn">
+                            <i class="far fa-bookmark"></i> Lưu tin
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal for job detail -->
+    <div class="modal" id="jobModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalJobTitle">Lập Trình Viên Full-stack - TUYỂN GẤP</h2>
+                <button class="close-btn" id="closeModal">&times;</button>
+            </div>
+            <div class="modal-body" id="modalJobContent">
+                <!-- Job content will be inserted here by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Form -->
+    <div class="application-form" id="applicationForm">
+        <div class="form-content">
+            <div class="form-header">
+                <h2 id="formJobTitle">Ứng tuyển: Lập Trình Viên Full-stack</h2>
+                <p id="formCompany">Công ty Công nghệ ABC</p>
+                <button class="form-close-btn" id="closeForm">&times;</button>
+            </div>
+            <div class="form-body">
+                <form id="jobApplicationForm">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName"><i class="fas fa-user"></i> Họ và tên *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone"><i class="fas fa-phone"></i> Số điện thoại *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email"><i class="fas fa-envelope"></i> Email *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="birthDate"><i class="fas fa-calendar"></i> Ngày sinh</label>
+                            <input type="date" id="birthDate" name="birthDate">
+                        </div>
+                        <div class="form-group">
+                            <label for="gender"><i class="fas fa-venus-mars"></i> Giới tính</label>
+                            <select id="gender" name="gender">
+                                <option value="">Chọn giới tính</option>
+                                <option value="male">Nam</option>
+                                <option value="female">Nữ</option>
+                                <option value="other">Khác</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="address"><i class="fas fa-home"></i> Địa chỉ</label>
+                        <input type="text" id="address" name="address" placeholder="Số nhà, đường, phường/xã, quận/huyện, tỉnh/thành phố">
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="education"><i class="fas fa-graduation-cap"></i> Trình độ học vấn</label>
+                            <select id="education" name="education">
+                                <option value="">Chọn trình độ</option>
+                                <option value="highschool">THPT</option>
+                                <option value="college">Cao đẳng</option>
+                                <option value="university">Đại học</option>
+                                <option value="master">Thạc sĩ</option>
+                                <option value="phd">Tiến sĩ</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="currentJob"><i class="fas fa-briefcase"></i> Công việc hiện tại</label>
+                            <input type="text" id="currentJob" name="currentJob">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="experience"><i class="fas fa-chart-line"></i> Kinh nghiệm làm việc</label>
+                        <textarea id="experience" name="experience" placeholder="Mô tả kinh nghiệm làm việc của bạn..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="skills"><i class="fas fa-tools"></i> Kỹ năng</label>
+                        <textarea id="skills" name="skills" placeholder="Các kỹ năng chuyên môn và kỹ năng mềm..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="coverLetter"><i class="fas fa-file-alt"></i> Thư giới thiệu</label>
+                        <textarea id="coverLetter" name="coverLetter" placeholder="Giới thiệu bản thân và lý do ứng tuyển..."></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label><i class="fas fa-file-upload"></i> Tải lên CV</label>
+                        <div class="file-upload" id="cvUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>Kéo thả file CV vào đây hoặc click để chọn file</p>
+                            <p><small>Hỗ trợ: PDF, DOC, DOCX (Tối đa 5MB)</small></p>
+                            <input type="file" id="cvFile" name="cvFile" accept=".pdf,.doc,.docx">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="submit-btn">
+                        <i class="fas fa-paper-plane"></i> Gửi đơn ứng tuyển
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Toggle job detail visibility
+        document.querySelectorAll(".view-detail-btn").forEach((button) => {
+            button.addEventListener("click", function () {
+                const jobId = this.getAttribute("data-job");
+                const jobDetail = document.getElementById(`job-detail-${jobId}`);
+
+                if (jobDetail.classList.contains("active")) {
+                    jobDetail.classList.remove("active");
+                    this.innerHTML = '<i class="fas fa-info-circle"></i> Xem chi tiết';
+                } else {
+                    // Close all other open details
+                    document.querySelectorAll(".job-detail.active").forEach((detail) => {
+                        detail.classList.remove("active");
+                    });
+                    document.querySelectorAll(".view-detail-btn").forEach((btn) => {
+                        btn.innerHTML = '<i class="fas fa-info-circle"></i> Xem chi tiết';
+                    });
+
+                    jobDetail.classList.add("active");
+                    this.innerHTML = '<i class="fas fa-times"></i> Ẩn chi tiết';
+                }
+            });
+        });
+
+        // Save job functionality
+        document.querySelectorAll(".save-btn").forEach((button) => {
+            button.addEventListener("click", function () {
+                this.classList.toggle("active");
+                if (this.classList.contains("active")) {
+                    this.innerHTML = '<i class="fas fa-bookmark"></i> Đã lưu';
+                } else {
+                    this.innerHTML = '<i class="far fa-bookmark"></i> Lưu';
+                }
+            });
+        });
+
+        // Application form functionality
+        const applicationForm = document.getElementById("applicationForm");
+        const closeForm = document.getElementById("closeForm");
+        const formJobTitle = document.getElementById("formJobTitle");
+        const formCompany = document.getElementById("formCompany");
+        const cvUpload = document.getElementById("cvUpload");
+        const cvFile = document.getElementById("cvFile");
+        const jobApplicationForm = document.getElementById("jobApplicationForm");
+
+        // Open application form
+        document.querySelectorAll(".apply-now-btn").forEach((button) => {
+            button.addEventListener("click", function () {
+                const jobId = this.getAttribute("data-job");
+                const jobCard = this.closest(".job-card");
+                const jobTitle = jobCard.querySelector(".job-card-header h3").textContent;
+                const company = jobCard.querySelector(".job-card-header p").textContent;
+
+                formJobTitle.textContent = `Ứng tuyển: ${jobTitle}`;
+                formCompany.textContent = company;
+
+                applicationForm.style.display = "flex";
+            });
+        });
+
+        // Close application form
+        closeForm.addEventListener("click", function () {
+            applicationForm.style.display = "none";
+        });
+
+        // Close form when clicking outside
+        window.addEventListener("click", function (event) {
+            if (event.target === applicationForm) {
+                applicationForm.style.display = "none";
+            }
+        });
+
+        // File upload functionality
+        cvUpload.addEventListener("click", function () {
+            cvFile.click();
+        });
+
+        cvFile.addEventListener("change", function () {
+            if (this.files.length > 0) {
+                const fileName = this.files[0].name;
+                cvUpload.innerHTML = `
+                    <i class="fas fa-file-check" style="color: #2ecc71;"></i>
+                    <p>Đã chọn file: ${fileName}</p>
+                    <p><small>Click để chọn file khác</small></p>
+                `;
+            }
+        });
+
+        // Form submission
+        jobApplicationForm.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // Here you would typically send the form data to a server
+            alert("Đơn ứng tuyển của bạn đã được gửi thành công! Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.");
+            applicationForm.style.display = "none";
+            jobApplicationForm.reset();
+
+            // Reset file upload display
+            cvUpload.innerHTML = `
+                <i class="fas fa-cloud-upload-alt"></i>
+                <p>Kéo thả file CV vào đây hoặc click để chọn file</p>
+                <p><small>Hỗ trợ: PDF, DOC, DOCX (Tối đa 5MB)</small></p>
+            `;
+        });
+
+        // Modal functionality for urgent jobs
+        const modal = document.getElementById("jobModal");
+        const closeModal = document.getElementById("closeModal");
+        const modalJobTitle = document.getElementById("modalJobTitle");
+        const modalJobContent = document.getElementById("modalJobContent");
+
+        // Sample urgent job data
+        const urgentJob = {
+            title: "Lập Trình Viên Full-stack",
+            company: "Công ty Công nghệ ABC",
+            location: "Hà Nội",
+            salary: "15-25 triệu",
+            quantity: "3 người",
+            experience: "2 năm trở lên",
+            level: "Nhân viên/Chuyên viên",
+            deadline: "30/12/2023",
+            description: [
+                "Phát triển ứng dụng web và mobile sử dụng React, Node.js",
+                "Thiết kế và phát triển API",
+                "Tối ưu hóa hiệu suất ứng dụng",
+                "Làm việc với cơ sở dữ liệu SQL và NoSQL"
+            ],
+            requirements: [
+                "Có ít nhất 2 năm kinh nghiệm làm việc với React và Node.js",
+                "Hiểu biết về cơ sở dữ liệu MySQL, MongoDB",
+                "Có kinh nghiệm với Git và các công cụ quản lý phiên bản",
+                "Khả năng làm việc độc lập và theo nhóm"
+            ],
+            benefits: [
+                "Lương thưởng cạnh tranh, thưởng theo dự án",
+                "Bảo hiểm sức khỏe cao cấp",
+                "Đào tạo và phát triển kỹ năng",
+                "Môi trường làm việc trẻ trung, năng động"
+            ],
+            contact: {
+                name: "Mr. Minh Anh",
+                phone: "0987.654.321",
+                email: "tuyendung@congngheabc.com",
+            },
+        };
+
+        // Show job detail in modal
+        function showUrgentJobDetail() {
+            const jobData = urgentJob;
+
+            if (modalJobContent) {
+                modalJobContent.innerHTML = `
+                    <div class="urgent-notice">
+                        <p><i class="fas fa-bolt"></i> ĐANG TUYỂN GẤP - ƯU TIÊN PHỎNG VẤN NGAY</p>
+                    </div>
+                    
+                    <div style="text-align: center; margin: 15px 0;">
+                        <img src="https://via.placeholder.com/100" alt="${jobData.company}" style="width:100px; height:100px; object-fit:cover; border-radius:50%;">
+                    </div>
+                    
+                    <div class="job-summary">
+                        <p><i class="fas fa-building"></i> <strong>Công ty:</strong> ${jobData.company}</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Địa điểm:</strong> ${jobData.location}</p>
+                        <p><i class="fas fa-money-bill-wave"></i> <strong>Mức lương:</strong> ${jobData.salary}</p>
+                        <p><i class="fas fa-users"></i> <strong>Số lượng:</strong> ${jobData.quantity}</p>
+                        <p><i class="fas fa-chart-line"></i> <strong>Kinh nghiệm:</strong> ${jobData.experience}</p>
+                        <p><i class="fas fa-user-tie"></i> <strong>Cấp bậc:</strong> ${jobData.level}</p>
+                        <p><i class="fas fa-calendar-alt"></i> <strong>Thời gian tuyển:</strong> ${jobData.deadline}</p>
+                    </div>
+                    
+                    <h3><i class="fas fa-tasks"></i> Mô tả công việc</h3>
+                    <ul>
+                        ${jobData.description.map((item) => `<li>${item}</li>`).join("")}
+                    </ul>
+
+                    <h3><i class="fas fa-check-circle"></i> Yêu cầu ứng viên</h3>
+                    <ul>
+                        ${jobData.requirements.map((item) => `<li>${item}</li>`).join("")}
+                    </ul>
+
+                    <h3><i class="fas fa-gift"></i> Quyền lợi</h3>
+                    <ul>
+                        ${jobData.benefits.map((item) => `<li>${item}</li>`).join("")}
+                    </ul>
+
+                    <div style="background: #e8f5e8; padding: 15px; border-radius: 8px; margin: 20px 0;">
+                        <h4><i class="fas fa-phone-alt"></i> Thông tin liên hệ</h4>
+                        <p><strong>Người liên hệ:</strong> ${jobData.contact.name}</p>
+                        <p><strong>Điện thoại:</strong> ${jobData.contact.phone}</p>
+                        <p><strong>Email:</strong> ${jobData.contact.email}</p>
+                    </div>
+
+                    <button class="apply-now-btn" data-job="urgent" style="width: 100%; margin-top: 20px;">
+                        <i class="fas fa-paper-plane"></i> Ứng tuyển ngay - Ưu tiên phỏng vấn
+                    </button>
+                `;
+
+                // Add event listener for the apply button in modal
+                modalJobContent.querySelector(".apply-now-btn").addEventListener("click", function () {
+                    formJobTitle.textContent = `Ứng tuyển: ${jobData.title}`;
+                    formCompany.textContent = jobData.company;
+                    applicationForm.style.display = "flex";
+                    modal.style.display = "none";
+                });
+
+                modal.style.display = "flex";
+            }
+        }
+
+        // Close modal
+        closeModal.addEventListener("click", function () {
+            modal.style.display = "none";
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener("click", function (event) {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+
+        // Auto show urgent job modal after page load
+        window.addEventListener("load", function () {
+            // Show the modal for the urgent job after a short delay
+            setTimeout(() => {
+                showUrgentJobDetail();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
